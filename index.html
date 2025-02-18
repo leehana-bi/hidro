@@ -132,18 +132,80 @@
       </p>
       <div class="grid">
         <div class="card">
-          <img src="img/produk1.png" alt="Product 3" />
-          <h4>sayur</h4>
+          <img src="img/r1.jpeg" alt="Product 1" />
         </div>
         <div class="card">
-          <img src="img/produk1.png" alt="Product 3" />
-          <h4>sayur</h4>
+          <img src="img/r2.jpeg" alt="Product 2" />
         </div>
         <div class="card">
-          <img src="img/produk1.png" alt="Product 3" />
-          <h4>sayur</h4>
+          <img src="img/r3.jpeg" alt="Product 3" />
+        </div>
+        <div class="card">
+          <img src="img/r4.jpeg" alt="Product 4" />
+        </div>
+        <div class="card">
+          <img src="img/r5.jpeg" alt="Product 5" />
+        </div>
+        <div class="card">
+          <img src="img/r6.jpeg" alt="Product 6" />
+        </div>
+        <div class="card">
+          <img src="img/r7.jpeg" alt="Product 7" />
+        </div>
+        <div class="card">
+          <img src="img/r8.jpeg" alt="Product 8" />
+        </div>
+        <div class="card">
+          <img src="img/r9.jpeg" alt="Product 9" />
+        </div>
+        <div class="card">
+          <img src="img/r10.jpeg" alt="Product 10" />
         </div>
       </div>
+
+      <h3>Paket Rekreasi</h3>
+      <div class="paket" onclick="toggleDeskripsi('tour')">
+        <strong>● KUNJUNGAN (TOUR KEBUN)</strong>
+        <div id="tour" class="deskripsi">
+          Tamu Hidroponik Nusantara akan diajak untuk berkeliling melihat
+          tanaman hidroponik yang segar sekaligus mendapatkan penjelasan cara
+          penyemaian, penanaman, pemanenan, hingga cara merawat tanaman
+          hidroponik.
+        </div>
+      </div>
+
+      <div class="paket" onclick="toggleDeskripsi('semai')">
+        <strong>● PAKET SEMAI-TANAM</strong>
+        <div id="semai" class="deskripsi">
+          Tamu akan diajak berkeliling kebun hidroponik, mendapatkan penjelasan
+          cara penyemaian, penanaman, pemanenan, hingga cara merawat tanaman
+          hidroponik sekaligus mempraktekkan cara penyemaian dan penanaman
+          hidroponik.
+        </div>
+      </div>
+
+      <div class="paket" onclick="toggleDeskripsi('melon')">
+        <strong>● PETIK MELON HIDROPONIK (NEW)</strong>
+        <div id="melon" class="deskripsi">
+          Selain tanaman hidroponik, terdapat juga wisata baru yaitu petik melon
+          hidroponik. Bagi kalian yang tertarik akan mendapatkan penjelasan
+          mengenai cara menanam melon hidroponik, cara merawat melon hidroponik,
+          hingga petik melon hidroponik.
+        </div>
+      </div>
+
+      <p style="margin-top: 20px; font-weight: bold">
+        Untuk informasi lebih lanjut mengenai harga dan reservasi, hubungi
+        WhatsApp kami di bawah.
+      </p>
+
+      <script>
+        function toggleDeskripsi(id) {
+          var deskripsi = document.getElementById(id);
+          deskripsi.style.display =
+            deskripsi.style.display === "block" ? "none" : "block";
+        }
+      </script>
       <h3>Unit Bisnis Lain</h3>
       <p>
         Hidroponik Nusantara juga memiliki platform E-Commerce yang menjual
@@ -161,6 +223,60 @@
           ><i data-feather="shopping-cart"></i> Shopee</a
         >
       </div>
+      <div class="alur">
+        <h3>Alur Pemesanan (Khusus Jabodetabek)</h3>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(1)"
+            >1. Hubungi WhatsApp Hidroponik Nusantara
+          </span>
+          <p id="dropdown1" class="dropdown-content">
+            Anda dapat menghubungi WhatsApp resmi Hidroponik Nusantara dengan
+            cara menekan tombol ”Pesan Sekarang” (ada tombol dibawah yang
+            langsung connect ke wa) di bawah ini untuk melakukan pemesanan. Anda
+            bisa menanyakan harga dan kesediaan stock yang ada pada Hidroponik
+            Nusantara.
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(2)">2. Melakukan pemesanan </span>
+          <p id="dropdown2" class="dropdown-content">
+            Setelah deal dengan harga dan stock tersedia, Anda dapat segera
+            melakukan pemesanan dengan mengisi nama, alamat tujuan, dan jumlah
+            pesanan (kg). Anda dapat memilih pengiriman via lalamove (pesanan
+            <10kg) atau menggunakan armada kami (pesanan >10kg).
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(3)">3. Pembayaran </span>
+          <p id="dropdown3" class="dropdown-content">
+            Setelah menghitung total pesanan dan ongkir (jika menggunakan
+            lalamove). Anda dapat melakukan pembayaran via transfer.
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(4)">4. Pengiriman </span>
+          <p id="dropdown4" class="dropdown-content">
+            Pengiriman akan segera dilakukan pada hari H sesuai jam operasional.
+            Jika pesanan sudah sampai, harap segera konfirmasi penerimaan
+            pesanan.
+          </p>
+        </div>
+      </div>
+
+      <script>
+        function toggleDropdown(dropdownNumber) {
+          var content = document.getElementById("dropdown" + dropdownNumber);
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        }
+      </script>
     </section>
 
     <img src="img/bm.png" alt="bm" width="100%" height="120px" />
@@ -188,67 +304,99 @@
 
         <img src="img/image 5.png" alt="Image 5" />
       </div>
-      <div class="alur">
-        <h3>Alur Pemesanan (Khusus Jabodetabek)</h3>
-        <span>1. Hubungi WhatsApp Hidroponik Nusantara </span>
-        <p>
-          Anda dapat menghubungi WhatsApp resmi Hidroponik Nusantara dengan cara
-          menekan tombol ”Pesan Sekarang” (ada tombol dibawah yang langsung
-          connect ke wa) di bawah ini untuk melakukan pemesanan. Anda bisa
-          menanyakan harga dan kesediaan stock yang ada pada Hidroponik
-          Nusantara.
-        </p>
-        <span>2. Melakukan pemesanan</span>
-        <p>
-          Setelah deal dengan harga dan stock tersedia, Anda dapat segera
-          melakukan pemesanan dengan mengisi nama, alamat tujuan, dan jumlah
-          pesanan (kg). Anda dapat memilih pengiriman via lalamove (pesanan
-          <10kg) atau menggunakan armada kami (pesanan >10kg).
-        </p>
-        <span>3. Pembayaran</span>
-        <p>
-          Setelah menghitung total pesanan dan ongkir (jika menggunakan
-          lalamove). Anda dapat melakukan pembayaran via transfer.
-        </p>
-        <span>4. Pengiriman</span>
-        <p>
-          Pengiriman akan segera dilakukan pada hari H sesuai jam operasional.
-          Jika pesanan sudah sampai, harap segera konfirmasi penerimaan pesanan.
-        </p>
+
+      <h3 style="margin: 20px">Kegiatan Magang/PKL</h3>
+
+      <div class="gallery">
+        <div class="card-item">
+          <img src="img/penyemaian.jpeg" alt="Product 1" />
+          <p>Penyemaian</p>
+        </div>
+        <div class="card-item">
+          <img src="img/penanaman.jpeg" alt="Product 2" />
+          <p>Penanaman</p>
+        </div>
+        <div class="card-item">
+          <img src="img/pengecekan pH dan ppm.jpeg" alt="Product 3" />
+          <p>Pengecekan pH dan ppm</p>
+        </div>
+        <div class="card-item">
+          <img src="img/pemanenan.jpeg" alt="Product 4" />
+          <p>Pemanenan</p>
+        </div>
+        <div class="card-item">
+          <img src="img/pemrosesan.jpeg" alt="Product 5" />
+          <p>Pemrosesan</p>
+        </div>
+        <div class="card-item">
+          <img src="img/pengemasan.jpeg" alt="Product 6" />
+          <p>Pengemasan</p>
+        </div>
       </div>
+
       <div class="daftar">
         <h3>Alur Pendaftaran</h3>
-        <ol>
-          <li>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(9)">1. Hubungi WhatsApp kami </span>
+          <p id="dropdown9" class="dropdown-content">
             Hubungi WhatsApp kami untuk menanyakan ketersediaan kuota peserta
             magang atau penelitian, dengan mencantumkan nama, universitas asal,
             serta waktu pelaksanaannya. Kami akan dengan senang hati menerima
             dan terbuka kepada mahasiswa.
-          </li>
-          <li>
-            Setelah terkonfirmasi dan terdapat persetujuan, mahasiswa
-            mempersiapkan dan mengirimkan berkas yang diperlukan untuk proses
-            pendaftaran.
-          </li>
-          <li>
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(8)">2. Survey langsung </span>
+          <p id="dropdown8" class="dropdown-content">
             Jika memungkinkan, mahasiswa dapat melakukan survei langsung ke
             Hidroponik Nusantara bertemu dengan pemiliknya untuk berbicara lebih
-            lanjut dan memahami lingkungan kerja di Hidroponik Nusantara.
-          </li>
-          <li>
-            Kirimkan surat dan berkas pendukung seperti surat dari universitas
-            melalui Whatsapp Hidroponik Nusantara.
-          </li>
-          <li>
+            lanjut mengenai topik magang atau penelitian serta memahami
+            lingkungan kerja di Hidroponik Nusantara.
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(7)"
+            >3. Kirimkan surat atau berkas pendukung
+          </span>
+          <p id="dropdown7" class="dropdown-content">
+            Setelah mendapatkan konfirmasi dari pemilik, kirimkan surat atau
+            berkas pendukung dari Universitas.
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(6)">4. Peninjauan berkas </span>
+          <p id="dropdown6" class="dropdown-content">
             Kami akan mengkonfirmasi kesempatan magang dan penelitian setelah
-            meninjau berkas yang telah dikirimkan.
-          </li>
-          <li>
+            meninjau surat atau berkas yang telah dikirimkan.
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(5)"
+            >5. Melakukan kegiatan magang atau penelitian sesuai waktu yang
+            telah disepakati
+          </span>
+          <p id="dropdown5" class="dropdown-content">
             Mahasiswa dapat langsung magang dan penelitian sesuai waktu yang
             telah disepakati.
-          </li>
-        </ol>
+          </p>
+        </div>
       </div>
+
+      <script>
+        function toggleDropdown(dropdownNumber) {
+          var content = document.getElementById("dropdown" + dropdownNumber);
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        }
+      </script>
     </section>
 
     <footer id="kontak">
@@ -290,6 +438,26 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+        <b>Kebun Ciracas dan Toko Hidroponik</b>
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.568579358904!2d106.87513249999999!3d-6.320258399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed86dbf28a13%3A0x898336f6d236b9d9!2sHidroponik%20Ciracas%20Cibubur!5e0!3m2!1sid!2sid!4v1739851097966!5m2!1sid!2sid"
+            width="100"
+            height="100"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <b>Kebun Nero</b>
+        <div>
+          <a
+            href="https://maps.app.goo.gl/h1u6mmqbf267tah69?g_st=iw"
+            class="map-link"
+            >Lihat Peta</a
+          >
+        </div>
       </div>
       <div class="contact-info">
         <h3>Informasi Kontak</h3>
@@ -324,31 +492,30 @@
         </p>
       </div>
     </footer>
-<div class="view">
-  <p>
-    Website ini telah dilihat sebanyak
-    <span id="page-view-count"></span> kali.
-  </p>
-  <script>
-    // Get the current page view count from localStorage
-    let pageViewCount = localStorage.getItem("page_view");
+    <div class="view">
+      <p>
+        Website ini telah dilihat sebanyak
+        <span id="page-view-count"></span> kali.
+      </p>
+      <script>
+        // Get the current page view count from localStorage
+        let pageViewCount = localStorage.getItem("page_view");
 
-    // If page view count is not set, initialize it to 0
-    if (pageViewCount === null) {
-      pageViewCount = 0;
-    }
+        // If page view count is not set, initialize it to 0
+        if (pageViewCount === null) {
+          pageViewCount = 0;
+        }
 
-    // Increment the page view count
-    pageViewCount++;
+        // Increment the page view count
+        pageViewCount++;
 
-    // Store the updated page view count back to localStorage
-    localStorage.setItem("page_view", pageViewCount);
+        // Store the updated page view count back to localStorage
+        localStorage.setItem("page_view", pageViewCount);
 
-    // Display the updated page view count
-    document.getElementById("page-view-count").innerText = pageViewCount;
-  </script>
-</div>
-
+        // Display the updated page view count
+        document.getElementById("page-view-count").innerText = pageViewCount;
+      </script>
+    </div>
 
     <script>
       feather.replace();
