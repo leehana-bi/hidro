@@ -187,7 +187,6 @@ p {
 #edukasi .daftar,
 #katalog .alur {
   padding: 30px;
-  margin: 20px;
 }
 
 #edukasi .alur h3,
@@ -256,6 +255,7 @@ footer {
   padding: 30px;
   background-color: #9edf9c;
   justify-content: center;
+  margin-top: 40px;
 }
 
 footer div {
@@ -315,6 +315,57 @@ footer h3 {
 .deskripsi {
   display: none;
   padding: 10px;
+}
+
+.review-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-item {
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.review-name {
+  font-weight: bold;
+}
+
+.review-rating {
+  color: gold;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px;
 }
 
 /* Responsive Design */
