@@ -4,6 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hidroponik Nusantara</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="https://unpkg.com/feather-icons"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
@@ -18,7 +22,9 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#profil">Profil</a></li>
           <li><a href="#katalog">Katalog</a></li>
+          <li><a href="#rekreasi">Rekreasi</a></li>
           <li><a href="#edukasi">Edukasi</a></li>
+          <li><a href="#unit">E Commerce</a></li>
           <li><a href="#kontak">Kontak</a></li>
         </ul>
       </nav>
@@ -79,6 +85,49 @@
     <img src="img/bm.png" alt="bm" width="100%" height="120px" />
     <section id="katalog">
       <h1>KATALOG<i data-feather="feather"></i></h1>
+      <div class="alur">
+        <h3>Alur Pemesanan (Khusus Jabodetabek)</h3>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(1)"
+            >1. Hubungi WhatsApp Hidroponik Nusantara
+          </span>
+          <p id="dropdown1" class="dropdown-content">
+            Anda dapat menghubungi WhatsApp resmi Hidroponik Nusantara dengan
+            cara menekan tombol ”Pesan Sekarang” (ada tombol dibawah yang
+            langsung connect ke wa) di bawah ini untuk melakukan pemesanan. Anda
+            bisa menanyakan harga dan kesediaan stock yang ada pada Hidroponik
+            Nusantara.
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(2)">2. Melakukan pemesanan </span>
+          <p id="dropdown2" class="dropdown-content">
+            Setelah deal dengan harga dan stock tersedia, Anda dapat segera
+            melakukan pemesanan dengan mengisi nama, alamat tujuan, dan jumlah
+            pesanan (kg). Anda dapat memilih pengiriman via lalamove (pesanan
+            <10kg) atau menggunakan armada kami (pesanan >10kg).
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(3)">3. Pembayaran </span>
+          <p id="dropdown3" class="dropdown-content">
+            Setelah menghitung total pesanan dan ongkir (jika menggunakan
+            lalamove). Anda dapat melakukan pembayaran via transfer.
+          </p>
+        </div>
+
+        <div class="dropdown-item">
+          <span onclick="toggleDropdown(4)">4. Pengiriman </span>
+          <p id="dropdown4" class="dropdown-content">
+            Pengiriman akan segera dilakukan pada hari H sesuai jam operasional.
+            Jika pesanan sudah sampai, harap segera konfirmasi penerimaan
+            pesanan.
+          </p>
+        </div>
+      </div>
       <h3>Produksi</h3>
       <div class="grid">
         <div class="card">
@@ -122,7 +171,7 @@
           <h4>Melon sweet net 35.000/kg</h4>
         </div>
       </div>
-      <h3>Rekreasi</h3>
+      <h3 id="rekreasi">Rekreasi</h3>
       <p>
         Hidroponik Nusantara menjadi tempat agrowisata edukasi yang dikunjungi
         oleh beberapa instansi perusahaan seperti perusahaan Total dan juga
@@ -206,7 +255,7 @@
             deskripsi.style.display === "block" ? "none" : "block";
         }
       </script>
-      <h3>Unit Bisnis Lain</h3>
+      <h3 id="unit">Unit Bisnis Lain</h3>
       <p>
         Hidroponik Nusantara juga memiliki platform E-Commerce yang menjual
         berbagai macam peralatan atau kebutuhan bertanam hidroponik untuk Anda
@@ -222,49 +271,6 @@
         <a href="https://s.shopee.co.id/1LQJplPCQ4" target="_blank"
           ><i data-feather="shopping-cart"></i> Shopee</a
         >
-      </div>
-      <div class="alur">
-        <h3>Alur Pemesanan (Khusus Jabodetabek)</h3>
-
-        <div class="dropdown-item">
-          <span onclick="toggleDropdown(1)"
-            >1. Hubungi WhatsApp Hidroponik Nusantara
-          </span>
-          <p id="dropdown1" class="dropdown-content">
-            Anda dapat menghubungi WhatsApp resmi Hidroponik Nusantara dengan
-            cara menekan tombol ”Pesan Sekarang” (ada tombol dibawah yang
-            langsung connect ke wa) di bawah ini untuk melakukan pemesanan. Anda
-            bisa menanyakan harga dan kesediaan stock yang ada pada Hidroponik
-            Nusantara.
-          </p>
-        </div>
-
-        <div class="dropdown-item">
-          <span onclick="toggleDropdown(2)">2. Melakukan pemesanan </span>
-          <p id="dropdown2" class="dropdown-content">
-            Setelah deal dengan harga dan stock tersedia, Anda dapat segera
-            melakukan pemesanan dengan mengisi nama, alamat tujuan, dan jumlah
-            pesanan (kg). Anda dapat memilih pengiriman via lalamove (pesanan
-            <10kg) atau menggunakan armada kami (pesanan >10kg).
-          </p>
-        </div>
-
-        <div class="dropdown-item">
-          <span onclick="toggleDropdown(3)">3. Pembayaran </span>
-          <p id="dropdown3" class="dropdown-content">
-            Setelah menghitung total pesanan dan ongkir (jika menggunakan
-            lalamove). Anda dapat melakukan pembayaran via transfer.
-          </p>
-        </div>
-
-        <div class="dropdown-item">
-          <span onclick="toggleDropdown(4)">4. Pengiriman </span>
-          <p id="dropdown4" class="dropdown-content">
-            Pengiriman akan segera dilakukan pada hari H sesuai jam operasional.
-            Jika pesanan sudah sampai, harap segera konfirmasi penerimaan
-            pesanan.
-          </p>
-        </div>
       </div>
 
       <script>
@@ -326,7 +332,7 @@
         </div>
         <div class="card-item">
           <img src="img/pemrosesan.jpeg" alt="Product 5" />
-          <p>Perompesan</p>
+          <p>Pemrosesan</p>
         </div>
         <div class="card-item">
           <img src="img/pengemasan.jpeg" alt="Product 6" />
@@ -398,6 +404,95 @@
         }
       </script>
     </section>
+
+    <div class="review-container">
+      <h2>Ulasan Pengguna</h2>
+
+      <form id="reviewForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="review">Ulasan:</label>
+        <textarea id="review" name="review" required></textarea>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" required>
+          <option value="5">5 - Luar Biasa</option>
+          <option value="4">4 - Bagus</option>
+          <option value="3">3 - Cukup</option>
+          <option value="2">2 - Kurang</option>
+          <option value="1">1 - Buruk</option>
+        </select>
+
+        <button type="submit">Kirim Ulasan</button>
+      </form>
+    </div>
+    <div id="reviews" class="reviews-grid"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const reviewForm = document.getElementById("reviewForm");
+        const reviewsContainer = document.getElementById("reviews");
+
+        // Load existing reviews from localStorage
+        const loadReviews = () => {
+          const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+          reviewsContainer.innerHTML = "";
+
+          reviews.forEach((review) => {
+            const reviewItem = document.createElement("div");
+            reviewItem.classList.add("review-item");
+
+            const reviewName = document.createElement("div");
+            reviewName.classList.add("review-name");
+            reviewName.textContent = review.name;
+
+            const reviewText = document.createElement("div");
+            reviewText.textContent = review.review;
+
+            const reviewRating = document.createElement("div");
+            reviewRating.classList.add("review-rating");
+            for (let i = 0; i < review.rating; i++) {
+              const star = document.createElement("i");
+              star.classList.add("fas", "fa-star");
+              reviewRating.appendChild(star);
+            }
+            reviewRating.innerHTML += ` (${review.rating})`;
+
+            reviewItem.appendChild(reviewName);
+            reviewItem.appendChild(reviewText);
+            reviewItem.appendChild(reviewRating);
+
+            reviewsContainer.appendChild(reviewItem);
+          });
+        };
+
+        // Save review to localStorage
+        const saveReview = (review) => {
+          const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+          reviews.push(review);
+          localStorage.setItem("reviews", JSON.stringify(reviews));
+        };
+
+        // Handle form submission
+        reviewForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const review = {
+            name: event.target.name.value,
+            review: event.target.review.value,
+            rating: parseInt(event.target.rating.value),
+          };
+
+          saveReview(review);
+          loadReviews();
+
+          reviewForm.reset();
+        });
+
+        // Initial load of reviews
+        loadReviews();
+      });
+    </script>
 
     <footer id="kontak">
       <div class="maps">
