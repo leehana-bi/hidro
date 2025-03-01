@@ -17,9 +17,11 @@ body {
 
 /* Navigation Bar */
 nav {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
   background: #9edf9c;
   color: #fff;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,7 +96,6 @@ h2::after {
 }
 
 #home {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -545,7 +546,6 @@ h4 a {
   position: relative;
   width: 100%;
   margin: auto;
-  margin-top: 20px;
   overflow: hidden;
 }
 
@@ -686,6 +686,10 @@ h4 a {
   }
 
   /* Home Section */
+  #home {
+    padding: 0;
+    margin: 0;
+  }
   #home h1 {
     font-size: 1.5rem;
   }
@@ -733,8 +737,13 @@ h4 a {
   }
 
   /* Slider */
+  .slider-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .slider img {
-    height: 300px; /* Sesuaikan tinggi gambar slider */
+    height: 500px; /* Sesuaikan tinggi gambar slider */
   }
 
   /* Partner Section */
@@ -759,7 +768,7 @@ h4 a {
   }
 
   .review-container {
-    max-width: 300px;
+    max-width: 500px;
   }
 
   .row-img {
@@ -771,193 +780,8 @@ h4 a {
     height: 100px;
   }
 
-  .deskripsi {
+  .modal {
     width: 50%;
-  }
-}
-
-/* Responsive Styles for 480px */
-@media (max-width: 480px) {
-  /* Navigation Bar */
-  nav ul {
-    top: 50px; /* Sesuaikan posisi menu dropdown */
-  }
-
-  nav ul li a {
-    font-size: 14px; /* Ukuran font lebih kecil */
-  }
-
-  /* Home Section */
-  #home h1 {
-    font-size: 1.3rem; /* Ukuran font lebih kecil */
-  }
-
-  #home p {
-    width: 95%; /* Lebar paragraf lebih kecil */
-    font-size: 0.9rem; /* Ukuran font lebih kecil */
-  }
-
-  /* Profil Section */
-  #profil img {
-    width: 150px; /* Ukuran gambar lebih kecil */
-  }
-
-  #profil p {
-    width: 95%; /* Lebar paragraf lebih kecil */
-    font-size: 0.9rem; /* Ukuran font lebih kecil */
-  }
-
-  /* Gallery and Card */
-  .card-item {
-    width: 90%; /* Lebar card lebih besar */
-  }
-
-  .grid-img {
-    grid-template-columns: 1fr; /* Satu kolom untuk mobile kecil */
-  }
-
-  .card-img {
-    height: 150px; /* Tinggi gambar lebih kecil */
-  }
-
-  /* Footer */
-  footer {
-    grid-template-columns: 1fr; /* Satu kolom untuk mobile kecil */
-  }
-
-  .maps iframe {
-    height: 150px; /* Tinggi peta lebih kecil */
-  }
-
-  /* Slider */
-  .slider img {
-    height: 200px; /* Tinggi gambar slider lebih kecil */
-  }
-
-  /* Partner Section */
-  .partner img {
-    width: 60px; /* Ukuran gambar lebih kecil */
-    height: 60px;
-  }
-
-  /* Review Section */
-  .reviews-grid {
-    grid-template-columns: 1fr; /* Satu kolom untuk mobile kecil */
-  }
-
-  /* Modal */
-  .modal-content {
-    width: 95%; /* Lebar modal lebih kecil */
-    max-width: 95%;
-  }
-
-  .modal img {
-    max-width: 95%; /* Lebar gambar modal lebih kecil */
-  }
-
-  .review-container {
-    max-width: 250px; /* Lebar container review lebih kecil */
-  }
-
-  .row-img img {
-    width: 80px; /* Ukuran gambar lebih kecil */
-    height: 80px;
-  }
-
-  .deskripsi {
-    width: 70%; /* Lebar deskripsi lebih kecil */
-  }
-}
-
-/* Responsive Styles for 600px */
-@media (max-width: 600px) {
-  /* Navigation Bar */
-  nav ul {
-    top: 55px; /* Sesuaikan posisi menu dropdown */
-  }
-
-  nav ul li a {
-    font-size: 15px; /* Ukuran font sedikit lebih besar */
-  }
-
-  /* Home Section */
-  #home h1 {
-    font-size: 1.5rem; /* Ukuran font sedikit lebih besar */
-  }
-
-  #home p {
-    width: 90%; /* Lebar paragraf sedikit lebih besar */
-    font-size: 1rem; /* Ukuran font sedikit lebih besar */
-  }
-
-  /* Profil Section */
-  #profil img {
-    width: 180px; /* Ukuran gambar sedikit lebih besar */
-  }
-
-  #profil p {
-    width: 90%; /* Lebar paragraf sedikit lebih besar */
-    font-size: 1rem; /* Ukuran font sedikit lebih besar */
-  }
-
-  /* Gallery and Card */
-  .card-item {
-    width: 85%; /* Lebar card sedikit lebih besar */
-  }
-
-  .grid-img {
-    grid-template-columns: repeat(2, 1fr); /* Dua kolom untuk mobile medium */
-  }
-
-  .card-img {
-    height: 180px; /* Tinggi gambar sedikit lebih besar */
-  }
-
-  /* Footer */
-  footer {
-    grid-template-columns: repeat(2, 1fr); /* Dua kolom untuk mobile medium */
-  }
-
-  .maps iframe {
-    height: 180px; /* Tinggi peta sedikit lebih besar */
-  }
-
-  /* Slider */
-  .slider img {
-    height: 250px; /* Tinggi gambar slider sedikit lebih besar */
-  }
-
-  /* Partner Section */
-  .partner img {
-    width: 70px; /* Ukuran gambar sedikit lebih besar */
-    height: 70px;
-  }
-
-  /* Review Section */
-  .reviews-grid {
-    grid-template-columns: repeat(2, 1fr); /* Dua kolom untuk mobile medium */
-  }
-
-  /* Modal */
-  .modal-content {
-    width: 90%; /* Lebar modal sedikit lebih besar */
-    max-width: 90%;
-  }
-
-  .modal img {
-    max-width: 90%; /* Lebar gambar modal sedikit lebih besar */
-  }
-
-  .review-container {
-    max-width: 280px; /* Lebar container review sedikit lebih besar */
-  }
-
-  .row-img img {
-    width: 90px; /* Ukuran gambar sedikit lebih besar */
-    height: 90px;
-  }
-
-  .deskripsi {
-    width: 60%; /* Lebar deskripsi sedikit lebih besar */
+    height: auto;
   }
 }
