@@ -18,6 +18,9 @@
     <header>
       <nav>
         <img src="img/logo.png" alt="logo" />
+        <div class="hamburger-menu" onclick="toggleMenu()">
+          <i data-feather="menu"></i>
+        </div>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#profil">Profil</a></li>
@@ -29,62 +32,117 @@
         </ul>
       </nav>
     </header>
+    <script>
+      function toggleMenu() {
+        const navMenu = document.querySelector("nav ul");
+        navMenu.classList.toggle("active");
+
+        const icon = document.querySelector(".hamburger-menu i");
+        if (navMenu.classList.contains("active")) {
+          icon.setAttribute("data-feather", "x");
+        } else {
+          icon.setAttribute("data-feather", "menu");
+        }
+      }
+    </script>
     <section id="home">
-      <img
-        src="img/main.jpeg"
-        width="100%"
-        height="400px"
-        style="position: relative; top: 0"
-      />
-      <h1>
-        Selamat Datang di Website Resmi Hidroponik Nusantara!<i
-          data-feather="feather"
-        ></i>
-      </h1>
+      <div class="slider-container">
+        <div class="slider">
+          <img src="img/1.jpeg" alt="Slide 1" class="slide active" />
+          <img src="img/2.jpeg" alt="Slide 2" class="slide" />
+          <img src="img/3.jpeg" alt="Slide 3" class="slide" />
+          <img src="img/4.jpeg" alt="Slide 2" class="slide" />
+          <img src="img/5.jpeg" alt="Slide 3" class="slide" />
+          <img src="img/8.jpeg" alt="Slide 3" class="slide" />
+        </div>
+
+        <!-- Tombol Navigasi -->
+        <button class="prev" onclick="prevSlide()">
+          <i data-feather="chevron-left"></i>
+        </button>
+        <button class="next" onclick="nextSlide()">
+          <i data-feather="chevron-right"></i>
+        </button>
+
+        <!-- Indikator Titik -->
+        <div class="dots-container"></div>
+      </div>
+
+      <h1>Selamat Datang di Website Resmi Hidroponik Nusantara!</h1>
       <p>
         Website Hidroponik Nusantara merupakan platform resmi yang berisi
         informasi lengkap mengenai gambaran umum perusahaan Hidroponik Nusantara
         dengan berbagai informasi menarik lainnya.
       </p>
-      <img
-        src="img/salad leaves.png"
-        width="100px"
-        height="100px"
-        style="margin-bottom: 30px"
-      />
     </section>
 
-    <img src="img/bm.png" alt="bm" width="100%" height="120px" />
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dotsContainer = document.querySelector(".dots-container");
+
+      // Buat indikator titik
+      slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateSlider() {
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("active", index === currentIndex);
+        });
+
+        // Perbarui titik indikator
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentIndex);
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+      }
+
+      // Auto-slide setiap 5 detik
+      setInterval(nextSlide, 5000);
+    </script>
+
     <section id="profil">
-      <h1>PROFIL PERUSAHAAN<i data-feather="feather"></i></h1>
-      <img src="img/pemilik.jpg" />
+      <h1>PROFIL PERUSAHAAN</h1>
       <p>
-        Hidroponik Nusantara merupakan usaha sayuran hidroponik yang didirikan
-        oleh Bapak Nafiq Hariawan pada tahun 2016. Bapak Nafiq mendirikan
-        Hidroponik Nusantara karena ketertarikan beliau dengan pertanian dan
-        melihat ada peluang besar pada tanaman hidroponik. Berbagai macam
-        sayuran yang dibudidaya yaitu bayam hijau, bayam merah, kangkung,
-        pakcoy, caisim, selada keriting, selada romaine, dan kale. Saat ini,
-        Hidroponik Nusantara memiliki empat kebun yang berlokasi di Bambu Apus,
-        dua kebun di Cikeas, dan Cimanggis untuk memenuhi permintaan konsumen.
-        Tidak hanya sayuran, Hidroponik Nusantara juga membudidayakan melon
-        hidroponik.
+        Hidroponik Nusantara merupakan perusahaan yang tidak hanya berfokus pada
+        pertumbuhan produk pertanian, tetapi juga memastikan bahwa setiap tahap
+        proses produksi—mulai dari pemilihan bibit unggul, pengelolaan nutrisi,
+        hingga proses panen—dilakukan dengan baik. Dengan demikian, Hidroponik
+        Nusantara mampu memberikan hasil pertanian yang bebas dari pestisida dan
+        bahan kimia berbahaya, menjamin produk yang aman dan bernutrisi tinggi.
       </p>
       <p>
-        Saat ini, Hidroponik Nusantara sudah memiliki pasar yang tetap, ia
-        menjualnya kepada beberapa distributor seperti supermarket, restaurant,
-        dan mitra. Untuk mengikuti perkembangan teknologi, pada tahun 2020
-        Hidroponik Nusantara mengembangan usaha baru yaitu membuka toko online
-        di platform e-commerce (Tokopedia, BukaLapak, Shopee, dan Lazada). Dalam
-        e-commerce tersebut menjual nutrisi hidroponik AB Mix, benih atau bibit
-        sayuran, obat pestisida, pupuk organik, peralatan hidroponik, peralatan
-        berkebun, dll.
+        Hidroponik Nusantara menanam tanaman yang segar dengan standar kualitas
+        tinggi dengan teknologi modern dan berkomitmen menyediakan produk dengan
+        kualitas terbaik yang dapat memenuhi kebutuhan dan kepuasan konsumen
+      </p>
+      <p>
+        Hidroponik Nusantara siap menjadi pilihan utama bagi Anda yang
+        mengutamakan produk segar, sehat, dan berkualitas.
       </p>
     </section>
 
-    <img src="img/bm.png" alt="bm" width="100%" height="120px" />
     <section id="katalog">
-      <h1>KATALOG<i data-feather="feather"></i></h1>
+      <h1>KATALOG</h1>
       <div class="alur">
         <h3>Alur Pemesanan (Khusus Jabodetabek)</h3>
 
@@ -128,50 +186,226 @@
           </p>
         </div>
       </div>
-      <h3>Produksi</h3>
-      <div class="grid">
-        <div class="card">
-          <img src="img/bayam hijau.jpeg" alt="Bayam hijau" />
-          <h4>Bayam hijau 20.000/kg</h4>
+      <h2>Produksi</h2>
+
+      <div class="grid-container">
+        <button class="btn-nav btn-prev" onclick="scrollLeft()">
+          <i data-feather="chevron-left"></i>
+        </button>
+        <div class="grid">
+          <div class="card">
+            <img src="img/bayam_hijau.jpeg" alt="Bayam hijau" />
+            <h4>Bayam hijau</h4>
+            <h4>
+              <a
+                href="https://telemed.ihc.id/artikel-detail-1081-Manfaat-Sayur-Bayam-Untuk-Kesehatan.html#:~:text=Bayam%20mengandung%20antioksidan%2C%20seperti%20vitamin,melindungi%20sel%2Dsel%20dari%20kerusakan.&text=Kandungan%20folat%20dalam%20bayam%20penting,dan%20dapat%20membantu%20meningkatkan%20kognisi"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/bayam_merah.jpeg" alt="Bayam merah" />
+            <h4>Bayam merah</h4>
+            <h4>
+              <a
+                href="https://www.halodoc.com/artikel/4-manfaat-bayam-merah-yang-jarang-diketahui?srsltid=AfmBOorpVhHX-_ThSkHysTLeGDmMi41HpwwtO-hVU_06iCZMbFXP35gk"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/kangkung.jpeg" alt="Kangkung" />
+            <h4>Kangkung</h4>
+            <h4>
+              <a
+                href="https://telemed.ihc.id/artikel-detail-609-Manfaat-Kangkung-Untuk-Kesehatan.html"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/caisim.jpeg" alt="Caisim" />
+            <h4>Caisim</h4>
+            <h4>
+              <a
+                href="https://www.liputan6.com/hot/read/5126130/14-manfaat-sawi-hijau-untuk-kesehatan-kaya-antioksidan-dan-sumber-vitamin?page=4"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/pakcoy.jpeg" alt="Pakcoy" />
+            <h4>Pakcoy</h4>
+            <h4>
+              <a
+                href="https://www.kompas.com/sains/read/2023/08/02/203000823/6-manfaat-pakcoy-untuk-kesehatan"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/selada_keriting.jpeg" alt="Selada keriting" />
+            <h4>Selada keriting</h4>
+            <h4>
+              <a
+                href="https://www.kompas.com/tren/read/2023/11/22/063000665/jadi-lalapan-penurun-berat-badan-ini-4-efek-samping-daun-selada?page=all"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/selada_romaine.jpeg" alt="Selada Romaine" />
+            <h4>Selada Romaine</h4>
+            <h4>
+              <a
+                href="https://www.halodoc.com/artikel/selada-romaine-ini-kandungan-nutrisi-dan-manfaatnya-untuk-kesehatan?srsltid=AfmBOooPrdJjm7v2CBXRmJHhbOrWWgazAwCg4Lbh1j9NMqeZ7z2VCNYG)"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/kale.jpeg" alt="Kale" />
+            <h4>Kale</h4>
+            <h4>
+              <a
+                href="https://www.halodoc.com/artikel/mengenal-sayur-kale-dan-manfaatnya-untuk-kesehatan?srsltid=AfmBOopAiUPan0wsX8u2XTNzKbzmiE6z8aosxjS2Z8d27Mtf-KBwaMm8"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/melon_fujisawa.jpeg" alt="Melon fujisawa" />
+            <h4>Melon fujisawa</h4>
+            <h4>
+              <a
+                href="https://surabaya.tribunnews.com/2022/09/14/sukses-budidaya-melon-sehat-dari-jepang-desa-di-lamongan-raup-pendapatan-besar-tanpa-pupuk-kimia#:~:text=Melon%20Fujisawa%20memang%20buah%20organik,dikenal%20sebagai%20wilayah%20kering%20basah"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
+          <div class="card">
+            <img src="img/melon_sweetnet.jpeg" alt="Melon sweet net" />
+            <h4>Melon sweetnet</h4>
+            <h4>
+              <a
+                href="https://banyumas.tribunnews.com/2024/01/18/melon-thailand-sweetnet-jadi-primadona-warga-kudus-punya-ciri-khas-manis-dan-renyah"
+                >Sumber Artikel</a
+              >
+            </h4>
+          </div>
         </div>
-        <div class="card">
-          <img src="img/bayam merah.jpeg" alt="Bayam merah" />
-          <h4>Bayam merah 20.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/kangkung.jpeg" alt="Kangkung" />
-          <h4>Kangkung 20.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/caisim.jpeg" alt="Caisim" />
-          <h4>Caisim 22.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/pakcoy.jpeg" alt="Pakcoy" />
-          <h4>Pakcoy 22.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/selada keriting.jpeg" alt="Selada keriting" />
-          <h4>Selada keriting 25.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/selada romaine.jpeg" alt="Selada Romaine" />
-          <h4>Selada Romaine 25.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/kale.jpeg" alt="Kale" />
-          <h4>Kale 35.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/melon fujisawa.jpeg" alt="Melon fujisawa" />
-          <h4>Melon fujisawa 35.000/kg</h4>
-        </div>
-        <div class="card">
-          <img src="img/melon sweetnet.jpeg" alt="Melon sweet net" />
-          <h4>Melon sweet net 35.000/kg</h4>
+        <button class="btn-nav btn-next" onclick="scrollRight()">
+          <i data-feather="chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div id="imageModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img id="modalImage" src="" alt="" />
+          <h4 id="modalTitle"></h4>
+          <p id="modalDescription"></p>
         </div>
       </div>
-      <h3 id="rekreasi">Rekreasi</h3>
+
+      <script>
+        const descriptions = {
+          "Bayam hijau":
+            "Bayam mengandung antioksidan, seperti vitamin C dan Vitamin E yang membantu melawan radikal bebas dalam tubuh dan dapat melindungi sel-sel dari kerusakan. Kandungan folat dalam bayam penting untuk kesehatan otak dan dapat membantu meningkatkan kognisi sehingga menjadikannya pilihan yang sangat baik untuk mendukung kesehatan mental dan fisik. Dengan manfaat yang baik, bayam ini menjadi pilihan sempurna bagi Anda yang mengutamakan asupan nutrisi berkualitas tinggi dalam pola makan sehari-hari.",
+          "Bayam merah":
+            "Manfaat bayam merah bagi kesehatan tak kalah jauh dengan bayam hijau. Senyawa-senyawa yang terkandung dalam bayam merah dinilai mampu meningkatkan kadar hemoglobin, menjaga kadar gula darah sampai menjaga daya tahan tubuh.",
+          Kangkung:
+            "Kangkung memiliki ragam senyawa tanaman dengan aktivitas antioksidan, seperti flavonoid, asam palmitate dan phytol. Antioksidan tersebut guna melawan radikal bebas yang kerap menyebabkan kerusakan DNA, sel jaringan hingga organ tubuh. Kandungan vitamin A dan vitamin C pada kangkung bermanfaat dalam meningkatkan imun tubuh, serta berperan dalam aktivasi sel darah putih yang bermanfaat dalam melawan infeksi. Tak hanya itu, aktivitas antioksidan dari vitamin A dan vitamin C turut melindungi sel-sel imun dari kerusakan yang disebabkan oleh radikal bebas. Selain itu, kangkung kaya akan kandungan beta karoten yang tinggi, sehingga baik dalam menjaga sel-sel mata dari kerusakan.",
+          Caisim:
+            "Caisim adalah sayuran yang kaya vitamin juga mineral, yang dibutuhkan tubuh. Caisim mengandung vitamin K dan C yang berkontribusi secara baik untuk menjaga sistem pertahanan kekebalan tubuh. Dengan mengonsumsi caisim, dapat membantu merangsang sistem kekebalan tubuh, mencegah stres oksidatif, dan menginduksi enzim detoksifikasi. Selain itu manfaat caisim juga membantu meningkatkan sistem kekebalan tubuh, menjaga penglihatan, meningkatkan kepadatan tulang, dan berpotensi melawan kanker.",
+          Pakcoy:
+            "Sayuran ini penuh dengan senyawa untuk melawan kanker seperti vitamin C, vitamin E, beta-karoten, folat, dan selenium. Vitamin C, vitamin E, dan beta-karoten adalah antioksidan kuat yang dapat membantu mencegah kerusakan sel akibat radikal bebas, yang dapat membantu menurunkan risiko kanker. Seperti sayuran hijau lainnya, pakcoy merupakan sumber flavonoid quercetin yang sangat baik. Quercetin dapat membantu mengurangi peradangan dalam tubuh, yang dapat membantu mengurangi risiko terkena berbagai masalah kesehatan kronis seperti penyakit jantung, diabetes, dan kanker. Selain itu pakcoy juga memiliki manfaat meningkatkan kekebalan tubuh, melindungi kesehatan mata, dan mendukung kesehatan tulang.",
+          "Selada keriting":
+            "Selada keriting adalah salah satu sayuran daun yang rendah kalori dan banyak mengandung serat. Kombinasi rendah kalori dan tinggi serat membuat selada cocok dikonsumsi sebagai makanan penurun berat badan. Dilansir dari laman Stylecraze, serat dalam sayuran ini membantu tubuh mempertahankan rasa kenyang, sehingga mencegah perilaku makan berlebihan. Selada juga merupakan sumber vitamin K yang berfungsi memperkuat tulang dan mengurangi risiko patah tulang. Vitamin A yang berperan penting dalam mendukung kesehatan mata pun terkandung dalam sayuran ini. Oleh karenanya, menurut WebMD, makan selada dapat menurunkan risiko terkena katarak serta mencegah degenerasi makula atau penurunan kemampuan penglihatan. Tidak hanya itu, daun selada mentah mengandung lebih 95 persen air.",
+          "Selada Romaine":
+            "Selada romaine adalah salah satu jenis sayuran hijau yang sering digunakan dalam salad dan hidangan sehat lainnya. Selada romaine juga kaya akan nutrisi penting seperti serat, vitamin A, vitamin K, folat, dan mineral seperti kalium. Kandungan kalorinya yang rendah membuatnya menjadi pilihan ideal untuk menjaga berat badan. Tak hanya itu, selada romaine memiliki berbagai manfaat kesehatan, mulai dari menjaga kesehatan mata hingga melancarkan pencernaan. Dengan memasukkan selada romaine ke dalam menu sehari-hari, kamu bisa mendapatkan nutrisi penting tanpa khawatir akan tambahan kalori.",
+          Kale: "Kale adalah sayuran hijau bergizi tinggi yang sering disebut 'superfood' karena kandungan nutrisi yang melimpah dan manfaatnya bagi kesehatan. Kale dikenal baik untuk kesehatan jantung, mata, tulang, sistem pencernaan, serta memiliki efek anti-penuaan dan detoksifikasi kulit.",
+          "Melon fujisawa":
+            "Melon Fujisawa merupakan jenis melon varietas Jepang yang memiliki tekstur daging empuk, renyah, dan manis, dengan warna orange, sedangkan kulitnya tebal dan berjaring rapat berwarna hijau. Melon fujisawa memiliki manfaat menjaga kesehatan pencernaan, menurunkan tekanan darah, dan menjaga kesehatan mata.",
+          "Melon sweetnet":
+            "Melon sweetnet merupakan jenis melon varietas Thailand yang memiliki bentuk sedikit oval dengan kulit berjaring seperti net sedangkan warna dagingnya kuning keemasan dan memiliki tekstur daging yang renyah. Melon Sweetnet memiliki banyak manfaat untuk kesehatan, di antaranya kaya akan vitamin C yang dapat meningkatkan sistem imun tubuh, menghidrasi tubuh karena kandungan airnya yang tinggi, serta membantu menjaga kesehatan kulit. Selain itu, melon ini juga mengandung serat yang baik untuk pencernaan, serta kaya akan antioksidan yang dapat membantu melawan radikal bebas dan mencegah penuaan dini.",
+        };
+
+        // Pastikan modal tersembunyi saat halaman pertama kali dimuat
+        document.addEventListener("DOMContentLoaded", function () {
+          const modal = document.getElementById("imageModal");
+          if (modal) {
+            modal.style.display = "none";
+          }
+        });
+
+        // Event listener untuk menampilkan modal ketika kartu diklik
+        document.querySelectorAll(".card").forEach((card) => {
+          card.addEventListener("click", function () {
+            const img = this.querySelector("img");
+            const title = this.querySelector("h4").textContent.trim();
+
+            document.getElementById("modalImage").src = img.src;
+            document.getElementById("modalTitle").textContent = title;
+            document.getElementById("modalDescription").textContent =
+              descriptions[title] || "Deskripsi belum tersedia.";
+
+            const modal = document.getElementById("imageModal");
+            if (modal) {
+              modal.style.display = "flex"; // Tampilkan modal
+              document.body.classList.add("modal-open");
+            }
+          });
+        });
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+          const modal = document.getElementById("imageModal");
+          if (modal) {
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+          }
+        }
+
+        // Tutup modal saat klik di luar konten
+        window.onclick = function (event) {
+          const modal = document.getElementById("imageModal");
+          if (event.target === modal) {
+            closeModal();
+          }
+        };
+
+        // Tutup modal saat tombol "close" diklik
+        document.querySelector(".close")?.addEventListener("click", closeModal);
+
+        document.addEventListener("DOMContentLoaded", function () {
+          feather.replace(); // Inisialisasi Feather Icons
+
+          const grid = document.querySelector(".grid");
+          const btnPrev = document.querySelector(".btn-prev");
+          const btnNext = document.querySelector(".btn-next");
+
+          if (!grid) {
+            console.error("Element .grid tidak ditemukan!");
+            return;
+          }
+
+          btnPrev.addEventListener("click", function () {
+            console.log("Scroll kiri sebelum:", grid.scrollLeft);
+            grid.scrollLeft -= 300; // Pindah ke kiri
+            console.log("Scroll kiri sesudah:", grid.scrollLeft);
+          });
+
+          btnNext.addEventListener("click", function () {
+            console.log("Scroll kanan sebelum:", grid.scrollLeft);
+            grid.scrollLeft += 300; // Pindah ke kanan
+            console.log("Scroll kanan sesudah:", grid.scrollLeft);
+          });
+        });
+      </script>
+
+      <h2 id="rekreasi">Rekreasi</h2>
       <p>
         Hidroponik Nusantara menjadi tempat agrowisata edukasi yang dikunjungi
         oleh beberapa instansi perusahaan seperti perusahaan Total dan juga
@@ -179,67 +413,66 @@
         akan mengembangkan agrowisata edukasi dengan jenis paket yang dapat Anda
         pilih.
       </p>
-      <div class="grid">
-        <div class="card">
+
+      <div class="grid-img">
+        <div class="card-img">
           <img src="img/r1.jpeg" alt="Product 1" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r2.jpeg" alt="Product 2" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r3.jpeg" alt="Product 3" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r4.jpeg" alt="Product 4" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r5.jpeg" alt="Product 5" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r6.jpeg" alt="Product 6" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r7.jpeg" alt="Product 7" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r8.jpeg" alt="Product 8" />
         </div>
-        <div class="card">
+        <div class="card-img">
           <img src="img/r9.jpeg" alt="Product 9" />
         </div>
-        <div class="card">
-          <img src="img/r10.jpeg" alt="Product 10" />
-        </div>
       </div>
-
-      <h3>Paket Rekreasi</h3>
-      <div class="paket" onclick="toggleDeskripsi('tour')">
-        <strong>● KUNJUNGAN (TOUR KEBUN)</strong>
-        <div id="tour" class="deskripsi">
-          Tamu Hidroponik Nusantara akan diajak untuk berkeliling melihat
-          tanaman hidroponik yang segar sekaligus mendapatkan penjelasan cara
-          penyemaian, penanaman, pemanenan, hingga cara merawat tanaman
-          hidroponik.
+      <div class="paket-rekreasi">
+        <h3>Paket Rekreasi</h3>
+        <div class="paket" onclick="toggleDeskripsi('tour')">
+          <strong>● Kunjungan (Tour Kebun)</strong>
+          <div id="tour" class="deskripsi">
+            Tamu Hidroponik Nusantara akan diajak untuk berkeliling melihat
+            tanaman hidroponik yang segar sekaligus mendapatkan penjelasan cara
+            penyemaian, penanaman, pemanenan, hingga cara merawat tanaman
+            hidroponik.
+          </div>
         </div>
-      </div>
 
-      <div class="paket" onclick="toggleDeskripsi('semai')">
-        <strong>● PAKET SEMAI-TANAM</strong>
-        <div id="semai" class="deskripsi">
-          Tamu akan diajak berkeliling kebun hidroponik, mendapatkan penjelasan
-          cara penyemaian, penanaman, pemanenan, hingga cara merawat tanaman
-          hidroponik sekaligus mempraktekkan cara penyemaian dan penanaman
-          hidroponik.
+        <div class="paket" onclick="toggleDeskripsi('semai')">
+          <strong>● Paket Semai-Tanam</strong>
+          <div id="semai" class="deskripsi">
+            Tamu akan diajak berkeliling kebun hidroponik, mendapatkan
+            penjelasan cara penyemaian, penanaman, pemanenan, hingga cara
+            merawat tanaman hidroponik sekaligus mempraktekkan cara penyemaian
+            dan penanaman hidroponik.
+          </div>
         </div>
-      </div>
 
-      <div class="paket" onclick="toggleDeskripsi('melon')">
-        <strong>● PETIK MELON HIDROPONIK (NEW)</strong>
-        <div id="melon" class="deskripsi">
-          Selain tanaman hidroponik, terdapat juga wisata baru yaitu petik melon
-          hidroponik. Bagi kalian yang tertarik akan mendapatkan penjelasan
-          mengenai cara menanam melon hidroponik, cara merawat melon hidroponik,
-          hingga petik melon hidroponik.
+        <div class="paket" onclick="toggleDeskripsi('melon')">
+          <strong>● Petik Melon Hidroponik (New)</strong>
+          <div id="melon" class="deskripsi">
+            Selain tanaman hidroponik, terdapat juga wisata baru yaitu petik
+            melon hidroponik. Bagi kalian yang tertarik akan mendapatkan
+            penjelasan mengenai cara menanam melon hidroponik, cara merawat
+            melon hidroponik, hingga petik melon hidroponik.
+          </div>
         </div>
       </div>
 
@@ -255,7 +488,7 @@
             deskripsi.style.display === "block" ? "none" : "block";
         }
       </script>
-      <h3 id="unit">Unit Bisnis Lain</h3>
+      <h2 id="unit">Unit Bisnis Lain/E-Commerce</h2>
       <p>
         Hidroponik Nusantara juga memiliki platform E-Commerce yang menjual
         berbagai macam peralatan atau kebutuhan bertanam hidroponik untuk Anda
@@ -285,10 +518,9 @@
       </script>
     </section>
 
-    <img src="img/bm.png" alt="bm" width="100%" height="120px" />
     <section id="edukasi">
-      <h1>EDUKASI<i data-feather="feather"></i></h1>
-      <p style="text-align: center">
+      <h1>EDUKASI</h1>
+      <p>
         Sebagai bentuk kontribusi di bidang edukasi, Hidroponik Nusantara
         memberikan kesempatan kepada mahasiswa/mahasiswi dari brbagai
         universitas untuk mengikuti kegiatan PKL, magang, dan penelitian. Para
@@ -299,7 +531,7 @@
         mahasiswa dan mahasiswi yang sudah pernah menjalankan kegiatan PKL,
         magang, dan penelitian di Hidroponik Nusantara.
       </p>
-      <div class="grid" style="display: flex; justify-content: center">
+      <div class="row-img">
         <img src="img/image 1.png" alt="Image 1" />
 
         <img src="img/image 2.png" alt="Image 2" />
@@ -311,7 +543,7 @@
         <img src="img/image 5.png" alt="Image 5" />
       </div>
 
-      <h3 style="margin: 20px">Kegiatan Magang/PKL</h3>
+      <!-- <h3 style="margin: 20px">Kegiatan Magang/PKL</h3>
 
       <div class="gallery">
         <div class="card-item">
@@ -338,7 +570,7 @@
           <img src="img/pengemasan.jpeg" alt="Product 6" />
           <p>Pengemasan</p>
         </div>
-      </div>
+      </div> -->
 
       <div class="daftar">
         <h3>Alur Pendaftaran</h3>
@@ -405,8 +637,16 @@
       </script>
     </section>
 
+    <section class="partner">
+      <h2>Partner Kami</h2>
+      <div class="row">
+        <img src="img/p1.png" alt="partner 1" />
+        <img src="img/p2.jpg" alt="partner 2" />
+      </div>
+    </section>
+
     <div class="review-container">
-      <h2>Ulasan Pengguna</h2>
+      <h3>Ulasan Pengguna</h3>
 
       <form id="reviewForm">
         <label for="name">Nama:</label>
