@@ -785,3 +785,138 @@ h4 a {
     height: auto;
   }
 }
+
+@media (max-width: 468px) {
+  /* Navigation Bar */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #9edf9c;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav .hamburger-menu {
+    display: block;
+  }
+
+  /* Home Section */
+  #home {
+    padding: 0;
+    margin: 0;
+  }
+  #home h1 {
+    font-size: 1rem;
+  }
+
+  #home p {
+    width: 90%;
+    font-size: 0.7rem;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Profil Section */
+  #profil img {
+    width: 200px;
+  }
+
+  #profil p {
+    width: 90%;
+  }
+
+  /* Gallery and Card */
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-item {
+    width: 80%;
+  }
+
+  .grid-img {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tampilan kecil */
+  }
+
+  .card-img {
+    height: 200px; /* Sesuaikan tinggi gambar */
+  }
+
+  /* Footer */
+  footer {
+    grid-template-columns: 1fr; /* Satu kolom untuk tampilan kecil */
+    text-align: center;
+  }
+
+  .maps iframe {
+    height: 150px; /* Sesuaikan tinggi peta */
+  }
+
+  /* Slider */
+  .slider-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .slider img {
+    height: 300px; /* Sesuaikan tinggi gambar slider */
+  }
+
+  /* Partner Section */
+  .partner img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Review Section */
+  .reviews-grid {
+    grid-template-columns: 1fr; /* Satu kolom untuk tampilan kecil */
+  }
+
+  /* Modal */
+  .modal-content {
+    max-width: 100%;
+  }
+
+  .modal img {
+    max-width: 100%;
+  }
+
+  .review-container {
+    max-width: 350px;
+  }
+
+  .row-img {
+    flex-wrap: wrap; /* Agar gambar turun ke bawah jika tidak cukup */
+  }
+
+  .row-img img {
+    width: 60px; /* Ukuran lebih kecil untuk mobile */
+    height: 60px;
+  }
+
+  .modal {
+    width: 100%;
+    height: auto;
+  }
+
+  .paket {
+    max-width: 300px;
+  }
+
+  #modalDescription {
+    font-size: 1rem;
+  }
+}
