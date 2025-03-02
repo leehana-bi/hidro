@@ -9,9 +9,6 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  background-image: url("img/bg2.png");
-  background-size: contain;
-  background-position: center;
   color: #308131;
 }
 
@@ -60,7 +57,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #308131;
+  color: #9edf9c;
   font-weight: bold;
 }
 
@@ -795,7 +792,7 @@ h4 a {
     top: 60px;
     left: 0;
     width: 100%;
-    background: #9edf9c;
+    background: #308131;
     padding: 10px 0;
     text-align: center;
   }
