@@ -9,6 +9,9 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
+  background-image: url("img/bg2.png");
+  background-size: contain;
+  background-position: center;
   color: #308131;
 }
 
@@ -57,7 +60,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #9edf9c;
+  color: #308131;
   font-weight: bold;
 }
 
@@ -339,10 +342,15 @@ span {
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
+  background-color: #9edf9c;
+  width: 750px;
+  color: white;
+  border-radius: 5px;
 }
 
 .dropdown-item span:hover {
   background-color: #f1f1f1;
+  color: #308131;
 }
 
 .dropdown-content {
@@ -420,8 +428,16 @@ footer h3 {
   padding: 10px;
   margin: 0px 50px;
   cursor: pointer;
-  width: 700px;
+  text-align: justify;
 }
+
+.paket strong {
+  background-color: #9edf9c;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 5px;
+}
+
 .deskripsi {
   display: none;
   padding: 10px;
@@ -792,7 +808,7 @@ h4 a {
     top: 60px;
     left: 0;
     width: 100%;
-    background: #308131;
+    background: #9edf9c;
     padding: 10px 0;
     text-align: center;
   }
@@ -917,7 +933,7 @@ h4 a {
     font-size: 1rem;
   }
 
-   .paket-rekreasi h3 {
+  .paket-rekreasi h3 {
     text-align: center;
   }
 }
