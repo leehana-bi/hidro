@@ -375,6 +375,7 @@ footer {
   background-color: #308131;
   justify-content: center;
   margin-top: 40px;
+  color: #fff;
 }
 
 footer div {
@@ -391,24 +392,24 @@ footer h3 {
 }
 
 .contact-info a {
-  color: #9edf9c;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact-info a:hover {
-  color: #fff;
+  color: #9edf9c;
 }
 
 .social-media a {
-  color: #9edf9c;
+  color: #fff;
   font-size: 24px;
   transition: color 0.3s;
   text-decoration: none;
 }
 
 .social-media a:hover {
-  color: #fff;
+  color: #9edf9c;
 }
 
 .view {
