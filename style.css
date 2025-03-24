@@ -60,7 +60,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #308131;
+  color: #9edf9c;
   font-weight: bold;
 }
 
@@ -653,6 +653,19 @@ h4 a {
   border-radius: 50%; /* Membuat gambar bulat */
   margin: 10px;
   transition: transform 0.3s ease-in-out;
+}
+
+.text {
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.button a {
+  background-color: #308131;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
 }
 
 .partner img:hover {
