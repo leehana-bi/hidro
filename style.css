@@ -9,9 +9,9 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  background-image: url("img/bg2.png");
+/*   background-image: url("img/bg2.png");
   background-size: contain;
-  background-position: center;
+  background-position: center; */
   color: #308131;
 }
 
